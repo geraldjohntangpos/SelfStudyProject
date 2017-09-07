@@ -8,7 +8,7 @@
 	else {
 		$sql = "SELECT * FROM comments";
 		$retval = mysqli_query($conn, $sql);
-		$row = mysqli_fetch_array($retval, MYSQL_ASSOC);
+		$row = mysqli_fetch_array($retval, MYSQLI_ASSOC);
 		$c = 0;
 		if($row != null) {
 			do {
@@ -18,7 +18,7 @@
 			$disp_post_time = $row['post_time'];
 			
 			include 'div.inc.php';
-			} while($row = mysqli_fetch_array($retval, MYSQL_ASSOC));
+			} while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC));
 		}
 		else {
 			echo 'No comments yet.';
